@@ -13,10 +13,12 @@ y0 = 100
 y0p = 0
 # Gráficos
 t = np.linspace(0,10,1000)
+zero = np.zeros(1000)
 fig, axs = plt.subplots(ncols=1, nrows=1, figsize=(10, 5))
 axs.plot(t,sobre_amortiguado(y0,y0p,1,0.5,t), label='Oscilador sobreamortiguado')
 axs.plot(t,sub_amortiguado(y0,y0p,0.3,1,t), label='Oscilador subamortiguado')
 axs.plot(t,critico(y0,y0p,1,0.1,t), label='Oscilador críticamente amortiguado')
+axs.plot(t,zero,":")
 axs.set_ylabel('Amplitud')
 axs.set_xlabel('Tiempo')
 axs.legend()
